@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="fastclick.js" type="application/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/animations.css" />
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+ -->
+ <script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="fastclick.js" type="application/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/animations.css" />
+
+
+
+
+
+
+<style type="text/css">
+<!-- 
+body{margin:auto;text-align:center;}
+ .ui-input-text  {font-size:150%;font-weight:bolder;margin:auto;text-align:center; border:none; }
+table{margin:auto;text-align:center;width:50%;height:100%;}
+td{background:#F2F2F2;min-width:55px;}
+table {
+ 
+			background:#d0d0d0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table, td   { 
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+   - moz-border-radius: 5px;
+      
+		
+}
+ td div { 
+    
+    border-radius: 15px;
+    -moz-border-radius: 5px;
+   
+}
+td{margin:0px;padding:0px;}
+td > div{margin:0px;padding:0px;}
+.marcador td{height:25px;} 
+
+.newscore{color:purple;font-weight:bolder;font-size:200%;}
+.save{width:auto;height:50px;font-size:150%;font-weight:bolder;}
+#getusername{ }
+.button{background:#eee;border-radius:9px;height:33px;border:none;font-weight:bolder;color:#555;display: inline-block;width: auto;line-height: 1.33333;padding:10px 15px;margin:5px;text-align:center;vertical-align:middle;} 
+
+#volver .on{background:rgb(49, 209, 176);!important}
+-->
+</style>
+    <script type="text/javascript">
+$(function() {
+   // Save input value to localStorage
+  
+   // Load input value from localStorage
+   $('document').ready(function  () {
+	$('.save').click(function(){window.location="game.html"});
+	 //////////////////
+	 /*
+	  localStorage.setItem('topuser1', 'rodolfo');
+	   localStorage.setItem('top1', '1000');*/
+      var username1 = localStorage.getItem('topuser1') || '<empty>';
+			var userscore1 = localStorage.getItem('top1') || '0';
+			userscore1=parseInt(userscore1);
+     $('#topuser1').val(username1);
+		 $('#top1').val(userscore1);
+		 
+	 /////////////////////////	 
+	 //////////////////
+	// localStorage.setItem('topuser2', 'roldan');
+	 //localStorage.setItem('top2', '9500000');
+      var username2 = localStorage.getItem('topuser2') || '<empty>';
+			var userscore2 = localStorage.getItem('top2') || '0';
+			userscore2=parseInt(userscore2);
+     $('#topuser2').val(username2);
+		 $('#top2').val(userscore2)
+		 
+	 /////////////////////////	
+	  //////////////////
+	// localStorage.setItem('topuser3', 'roldan');
+	 //localStorage.setItem('top3', '9500000');
+      var username3 = localStorage.getItem('topuser3') || '<empty>';
+			var userscore3 = localStorage.getItem('top3') || '0';
+			userscore3=parseInt(userscore3);
+     $('#topuser3').val(username3);
+		 $('#top3').val(userscore3)
+		 
+	 /////////////////////////	
+	  //////////////////
+	// localStorage.setItem('topuser4', 'roldan');
+	 //localStorage.setItem('top4', '9500000');
+      var username4 = localStorage.getItem('topuser4') || '<empty>';
+			var userscore4 = localStorage.getItem('top4') || '0';
+			userscore4=parseInt(userscore4);
+     $('#topuser4').val(username4);
+		 $('#top4').val(userscore4)
+		 
+	 /////////////////////////	
+	  //////////////////
+	// localStorage.setItem('topuser5', 'roldan');
+	 //localStorage.setItem('top5', '9500000');
+      var username5 = localStorage.getItem('topuser5') || '<empty>';
+			var userscore5 = localStorage.getItem('top5') || '0';
+			userscore5=parseInt(userscore5);
+     $('#topuser5').val(username5);
+		 $('#top5').val(userscore5)
+		 
+	 /////////////////////////	
+	    //localStorage.setItem('score', '970');
+			score=localStorage.getItem('score') || '<empty>';
+			score=parseInt(score);
+	 // var score='1222p';
+		////alert($('#top1').val());
+	 if(score > userscore1){
+	 $('.save').attr('id','save1');
+	 $('#save1').on('click', function() {
+	 
+   //   var username = userscore1;
+      localStorage.setItem("top1", score);
+			var a1=localStorage.getItem("top1");
+			localStorage.setItem("topuser1",$('#topuser1').val())
+			//alert('top1'+$('#user1').text())
+			//localStorage.setItem("topuser1", a1);
+			 $('#topuser1').attr('disabled','disabled');
+			//localStorage.setItem('score', '1013');
+			});
+	 $('#rank1').html('<td><input type="text" name="user1" id="topuser1" value="Your name"/> </td><td class="newscore pulse">'+score+'</td>')
+	 
+	 }
+	 else if(score > userscore2 ){
+	 $('.save').attr('id','save2');
+	 $('#save2').on('click', function() {
+	 
+   //   var username = userscore2;
+      localStorage.setItem("top2", score);
+			var a2=localStorage.getItem("top2");
+			localStorage.setItem("topuser2",$('#topuser2').val())
+			//alert('top2'+$('#user2').text())
+			//localStorage.setItem("topuser2", a2);
+			 $('#topuser2').attr('disabled','disabled');
+			//localStorage.setItem('score', '2023');
+			});
+	 $('#rank2').html('<td><input type="text" name="user2" id="topuser2" value="Your name"/> </td><td class="newscore pulse">'+score+'</td>')
+	 
+	 }else if(score > userscore3 ){
+	 $('.save').attr('id','save3');
+	 $('#save3').on('click', function() {
+	 
+   //   var username = userscore3;
+      localStorage.setItem("top3", score);
+			var a3=localStorage.getItem("top3");
+			localStorage.setItem("topuser3",$('#topuser3').val())
+			//alert('top3'+$('#user3').text())
+			//localStorage.setItem("topuser3", a3);
+			 $('#topuser3').attr('disabled','disabled');
+			//localStorage.setItem('score', '3033');
+			});
+	 $('#rank3').html('<td><input type="text" name="user3" id="topuser3" value="Your name"/> </td><td class="newscore pulse">'+score+'</td>')
+	 
+	 }else if(score > userscore4 ){
+	 $('.save').attr('id','save4');
+	 $('#save4').on('click', function() {
+	 
+   //   var username = userscore4;
+      localStorage.setItem("top4", score);
+			var a4=localStorage.getItem("top4");
+			localStorage.setItem("topuser4",$('#topuser4').val())
+			//alert('top4'+$('#user4').text())
+			//localStorage.setItem("topuser4", a4);
+			 $('#topuser4').attr('disabled','disabled');
+			//localStorage.setItem('score', '4044');
+			});
+	 $('#rank4').html('<td><input type="text" name="user4" id="topuser4" value="Your name"/> </td><td class="newscore pulse">'+score+'</td>')
+	 
+	 }else if(score > userscore5 ){
+	 $('.save').attr('id','save5');
+	 $('#save5').on('click', function() {
+	 
+   //   var username = userscore5;
+      localStorage.setItem("top5", score);
+			var a5=localStorage.getItem("top5");
+			localStorage.setItem("topuser5",$('#topuser5').val())
+			//alert('top5'+$('#user5').text())
+			//localStorage.setItem("topuser5", a5);
+			 $('#topuser5').attr('disabled','disabled');
+			//localStorage.setItem('score', '5053');
+			});
+	 $('#rank5').html('<td><input type="text" name="user5" id="topuser5" value="Your name"/> </td><td class="newscore pulse">'+score+'</td>')
+	 
+	 }
+	 
+	 
+	 
+   });
+  $('#volver').click(function(){window.location="game.html"})
+}
+ 
+);
+
+</script>
+<style type="text/css">
+<!-- 
+input{border:none;color:purple;}
+input:disabled{color:#000;!important font-size:200%;font-weight:bolder;} 
+.button{background:#eee;border-radius:9px;height:33px;border:none;font-weight:bolder;color:#555;display: inline-block;width: auto;line-height: 1.33333;padding:10px 15px;margin:5px;text-align:center;vertical-align:middle;} 
+.on{color:#fff;background:#3388CC;}
+.ui-state-disabled{opacity:1.0;|important}
+#rank1 input:disabled{color:rgba(190, 111, 207,1);background:rgba(190, 111, 207,0.4);!important}
+#rank2 input:disabled{color:rgb(52, 151, 219);background:rgba(52, 151, 219,0.4);!important}
+#rank3 input:disabled{color:rgb(49, 209, 176);background:rgba(49, 209, 176,0.4);!important}
+#rank4 input:disabled{color:rgb(241, 60, 153);background:rgba(241, 60, 153,0.4);!important}
+#rank5 input:disabled{color:red;background:rgba(125,0,0,0.5);!important}
+-->
+</style>
+  </head>
+  <body>
+ 
+  <div data-role="page"    >
+
+	<div data-role="header" style="background:purple;color:#fff;">
+		<h1>Score</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>
+		<p id="showrow">
+ 
+ 
+ 
+
+		</p>
+		<div id="getusername">
+      <table class="marcador">
+            <tr id="rank1">
+						  
+            <td ><input type="text" id="topuser1" disabled="disabled"></td>
+						<td ><input type="text"  id="top1" disabled="disabled"></td>
+            </tr>
+						<tr id="rank2">
+            <td  ><input type="text" id="topuser2" disabled="disabled" ></td>
+						<td  ><input type="text" id="top2" disabled="disabled"></td>
+            </tr>
+						<tr id="rank3">
+            <td ><input type="text" id="topuser3"  disabled="disabled" ></td>
+						<td  ><input type="text" id="top3" disabled="disabled" ></td>
+            </tr>
+						<tr id="rank4">
+            <td ><input type="text" id="topuser4" disabled="disabled" ></td>
+						<td ><input type="text" id="top4" disabled="disabled" ></td>
+            </tr>
+						<tr id="rank5">
+            <td  ><input type="text" id="topuser5" disabled="disabled" ></td>
+						<td  ><input type="text" id="top5" disabled="disabled" ></td>
+            </tr>
+						
+      </table>
+ <div class="button on" >
+			  <div class="save">Save</div> 
+</div>				
+ </p>		
+	</div><!-- /content -->
+<div data-role="footer" data-position="fixed" style="background:purple;color:#fff;"> 
+
+	<h4 id="volver" class=" "> <div class="button on" >Back</div> </h4> 
+</div>
+</div><!-- /page -->
+		 
+ 
+  </body>
+</html>
