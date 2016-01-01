@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.dotable"
+        id        = "com.appdair.tokio"
         version   = "1.0.0">
 
     <name>Tokio</name>
@@ -12,7 +12,7 @@
    Dvertido juego contra-reloj
     </description>
 
-    <author href="http://adairfernandez.com" email="support@phonegap.com">
+    <author href="http://adairfernandez.com" email="misapps263@gmail.com">
         Appdair
     </author>
 
@@ -118,8 +118,8 @@
 
     <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
-    <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-    <plugin name="cordova-plugin-whitelist" version="1" />
+    <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html 
+    <plugin name="cordova-plugin-whitelist" version="1" />-->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
