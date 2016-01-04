@@ -112,6 +112,25 @@ body {
 #menu{font-weight:bolder;margin:auto;text-align: center ;margin-left: auto;
     margin-right: auto;} 
 #vidas{font-size:200%;font-weight:bolder;color:#000;}
+
+.btn-hint{ background-color: #feaf20;
+    border-color: #d79a34;color: #333;
+		border-bottom:2px solid #d79a34;
+		border-radius:15px;
+    text-shadow: 1px 1px 0 #d79a34;
+		cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+		width:100%;
+		}
+
 /* -------------------------------------
  * Bar container
  * ------------------------------------- */
@@ -304,7 +323,7 @@ function onDeviceReady() {
 
 //añadimos admob
 ///si no funciona admov eliminar linea de index.JS
-admob.createBannerView({publisherId: "ca-app-pub-4893236026217731/3839638608 "});
+admob.createBannerView({publisherId: "ca-app-pub-4893236026217731/2794076205 "});
 //fin admov
  // Fast-click to elliminate the delay of 300ms
     FastClick.attach(document.body);
@@ -452,9 +471,15 @@ theme=localStorage.getItem('theme') || 'light';
 dificultad=localStorage.getItem('dificultad') || 'normal';
 
 switch(dificultad){
-
+//////movil
+case "movil-baby":  maxrows=5; colorarray=colorarray.splice(0,4); break;
+case 'movil-easy':  maxrows=6;break;
+case 'movil-normal':  maxrows=7;break;
+case 'movil-hard':  maxrows=7; colorarray=colorarray.concat(colorarray2); break;
+case 'movil-extreme':  maxrows=9; colorarray=colorarray.concat(colorarray2); break;
+////////tablet
 case "baby":  maxrows=5; colorarray=colorarray.splice(0,4); break;
-case 'easy':  maxrows=5;break;
+case 'easy':  maxrows=6;break;
 case 'normal':  maxrows=9;break;
 case 'hard':  maxrows=9; colorarray=colorarray.concat(colorarray2); break;
 case 'extreme':  maxrows=15; colorarray=colorarray.concat(colorarray2); break;
@@ -505,13 +530,16 @@ starttimer=setTimeout( function(){dotable(rows)} , 500);
 
 function restart(e){
  
+ mensaje='<span color:rgb(49, 209, 176);>NEXT!!!</span>'; 		
+		
+ 
 //$('#main').html('comenzar');
   console.log('vidas '+vidas);
 if(vidas<=0){/*alert('Tienes '+vidas+' vidas asi que te comes la publicidad');*/
  window.location="storage.html";
  }else{
  if(a){clearTimeout(a)}
- 
+  mensaje='<span style="color:purple;">TIME OUT!!!</span>',
  rows=clevel,
  //clearInterval(set),clearInterval(starttimer),
 //alert('restart');
@@ -520,7 +548,16 @@ if(vidas<=0){/*alert('Tienes '+vidas+' vidas asi que te comes la publicidad');*/
 	//$("#main").html(''),
 	 // $("#main").html('<div>level'+levelstage+'/'+maxstage+'</div><div>vidas :'+vidas+'</div>'),
 		
-       a=setTimeout( function(){$("#main").html('');start(levelstage)} , 500),
+		 
+       a=setTimeout( function(){
+			 $("#main").css('background','transparent');
+			 $("#main").html('<div class="mensaje" style="height:100%;text-align:center;font-size:500%;position:relative;top:45%;color:purple;">'+mensaje+' <div>'
+    
+ 
+   <!-- <p   style="border:2px solid #000000;  border-radius:9px; width:100px;" onclick="alert('Pause');">Pause</p>-->
+ 
+			+'  ');start(levelstage)} , 500),
+
 	// a=setTimeout( function(){ $("#main").html('<div>level'+levelstage+'/'+maxstage+'</div><div>vidas :'+vidas+'</div>'); b=setTimeout( function(){$("#main").html('');start(levelstage);clearTimeout(a)} , 300)};} , 500),
 			// a=setTimeout( function(){$("#main").html('<div>level'+levelstage+'/'+maxstage+'</div><div>vidas :'+vidas+'</div>');clearTimeout(a);clearInterval(set);} , 500),
 	
@@ -606,7 +643,7 @@ var i=0;
 	  
 	
 	// alert('sube nivel -levelstage='+levelstage+' maxstage= '+maxstage);
-	 $('#level').text('sube de nivel!!!!!!!!');
+	 $('#level').text('Next level!!!!!!');
 	 levelstage=0; 
 	 //$('#mylevel').css('width',(100*levelstage)/maxstage+'%');
 	 $('#mylevel').animate({width:'100%'},1000);
@@ -730,6 +767,8 @@ y.bind("touchstart",
  //rows--;
  //levelstage=rows;
  // if( express==true){ puntos=1;alert('a');}
+ mensaje='<span color:red;>FAIL!!!</span>'; 		
+
  if( expres==false){ puntos=1;} 
  $('#vidas').text(vidas);
  levelstage=0;
@@ -916,7 +955,7 @@ return isbonus;
  function power(){
        Vpower=true;
        //$('#stageprogress').addClass('pulse');
-       $('#pista').html('<div class="pulse">HELP!!!</div>');
+       $('#pista').html('<div class="pulse btn-hint">HINT!!!</div>');
       if(Vpower==true){
             
                   	if(puntuacion>999){
@@ -937,6 +976,7 @@ return isbonus;
  
 function dotable(e)
 {
+						 $("#main").css('background','#d0d0d0');
 
   if(puntuacion<0){puntuacion=0};
 	$('#timerbar').removeClass('timerbar');

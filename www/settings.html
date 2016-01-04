@@ -45,7 +45,7 @@ function inicializarEventos()
 
 		//nivel de dificultaddif
 		 
-	  dificultad=['baby','easy','normal','hard','extreme'];
+	  dificultad=['baby','easy','normal','hard','extreme','movil-normal','movil-hard','movil-extreme','movil-easy','movil-baby'];
 		for (i=0;i<=dificultad.length;i++){
 		$('#'+dificultad[i]).click(function(){$('#dificultad > div').removeClass('on');$(this).addClass('on'); localStorage.setItem("dificultad",$(this).attr('id'))})
 		
@@ -85,29 +85,45 @@ body{background:#333;}
 </div> 
 <div class="setting">
 <div id="sonido">
-Sound:<div id="soundON" class="button">ON </div>
+<big>Sound:</big><div id="soundON" class="button">ON </div>
  <div id="soundOFF" class="button"> OFF </div>
   </div>
 <hr>
 <div id="tema">
-Theme :
+<big>Theme:</big>
 <div id="themeLight" class="button">Light</div><div id="themeDark" class="button"> Dark </div>
 </div>
 <hr>
 <div id="nivel">
-Level :
+<big>Level of difficulty:</big>
 <div id="dificultad">
+<ul style="list-style:none;">
+  <li > Smartphone: 
+<div id="movil-baby" class="button">Light</div>
+<div id="movil-easy" class="button"> Easy </div>
+<div id="movil-normal" class="button">Normal</div>
+<div id="movil-hard" class="button"> Hard </div>
+<div id="movil-extreme" class="button"> Extreme </div>
+	 </li>
+	
+	<li>
+ Tablet: 
 <div id="baby" class="button">Light</div>
 <div id="easy" class="button"> Easy </div>
 <div id="normal" class="button">Normal</div>
 <div id="hard" class="button"> Hard </div>
 <div id="extreme" class="button"> Extreme </div>
 </div>
+  
+	</li>
+</ul>
+
+
 </div>
 <hr>
 <div></div>
 <div id="score">
-Score:
+<big>Score:</big>
 
 <div id="clear" class="button on">Clear score</div>
 </div>
