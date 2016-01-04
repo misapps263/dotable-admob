@@ -724,7 +724,8 @@ $(this).append('<div class="puntos">'+puntos+'</div>');
 /* alert('subes nivel?'+truetarget+' - '+x.size());*/levelstage++; my_media.release();playAudio("/android_asset/www/stageup.mp3");/*alert(x.size()+'-'+truetarget)*/
 }; //fin if x.size
  
- if(target<=0){rows++;$("#main").html('');
+ if(target<=0){rows++;//$("#main").html('');
+ $("#main").html('<tr><td style="background:#e0e0e0;text-align:center;font-weight:bold;color:#333;"> Loading... </td></tr>')
  //puntos=10;
  if( expres==false){ puntos=10;}else{puntos=100;}
 n+=15;
@@ -984,6 +985,7 @@ else{
 //comprobamos que no se hagan mas rows del permitido
  if(e>maxrows){e=maxrows}
 var truecount=0;
+
  $("#main").html('');
   for(i=0;i<=e-1;i++){
 	 $("#main").append('<tr id="col'+i+'"> </tr>');
