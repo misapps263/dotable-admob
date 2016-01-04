@@ -472,8 +472,8 @@ dificultad=localStorage.getItem('dificultad') || 'normal';
 switch(dificultad){
 //////movil
 case "movil-baby":  maxrows=5; colorarray=colorarray.splice(0,4); break;
-case 'movil-easy':  maxrows=6;break;
-case 'movil-normal':  maxrows=7;break;
+case 'movil-easy':  maxrows=5;break;
+case 'movil-normal':  maxrows=6;break;
 case 'movil-hard':  maxrows=7; colorarray=colorarray.concat(colorarray2); break;
 case 'movil-extreme':  maxrows=9; colorarray=colorarray.concat(colorarray2); break;
 ////////tablet
@@ -941,7 +941,7 @@ return isbonus;
  function power(){
        Vpower=true;
        //$('#stageprogress').addClass('pulse');
-       $('#pista').html('<div class="pulse btn-hint">Hint!</div>');
+       $('#pista').html('<div class="pulse "><span class="btn-hint">Hint!</span></div>');
       if(Vpower==true){
             
                   	if(puntuacion>999){

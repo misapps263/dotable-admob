@@ -47,7 +47,7 @@ function inicializarEventos()
 		 
 	  dificultad=['baby','easy','normal','hard','extreme','movil-normal','movil-hard','movil-extreme','movil-easy','movil-baby'];
 		for (i=0;i<=dificultad.length;i++){
-		$('#'+dificultad[i]).click(function(){$('#dificultad > div').removeClass('on');$(this).addClass('on'); localStorage.setItem("dificultad",$(this).attr('id'))})
+		$('#'+dificultad[i]).click(function(){$('#dificultad > li >div').removeClass('on');$(this).addClass('on'); localStorage.setItem("dificultad",$(this).attr('id'))})
 		
 		}
 		$('#'+localStorage.getItem("dificultad")).addClass('on')
