@@ -55,11 +55,15 @@ function inicializarEventos()
     										
     		  // Clear localStorage
    $('#clear').on('click', function() {
-      localStorage.clear();
+	 var r = confirm("Are you sure?");
+    if (r == true) {
+         localStorage.clear();$('#clear').css('background','grey')
+    }  
+    
    });									
     	 
 	   $('#volver').click(function(){window.location="game.html"})
-	 
+ 
 }
  		
 	 
@@ -124,8 +128,8 @@ body{background:#333;}
 <div></div>
 <div id="score">
 <big>Score:</big>
-
-<div id="clear" class="button on">Clear score</div>
+ 
+<div id="clear" class="button on" >Clear score</div>
 </div>
 <div data-role="footer" data-position="fixed" style="background:purple;color:#fff;"> 
 	<h4 id="volver" class=" "> <div class="button on" >Back</div> </h4> 
